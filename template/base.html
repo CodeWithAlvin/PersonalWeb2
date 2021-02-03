@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Welcome to AlvinSaini.herokuapp.com this is my personal website you are welcomed to visit here">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title here-->
+	<title>{%block title%} {%endblock title%}</title>
+	<!--links here -->
+    {%block links%} {%endblock links%}
+    <!-- base.css here -->
+	<link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+
+    <!--Body comes here -->
+    {%block body%}{%endblock body%}
+    
+
+    <!--New JavaScript here-->
+	{%block script%}{%endblock script%}
+    <script src="/static/js/base.js"></script>
+    
+</body>
+</html>
