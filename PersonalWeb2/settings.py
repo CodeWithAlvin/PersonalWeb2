@@ -26,7 +26,7 @@ SECRET_KEY = '*(s=jtc@ay$&_-ve&^wu-xvba*@4a3vx$gvqhj)lyak4^e115+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","vapchat.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1","sainialvin.herokuapp.com"]
 
 
 # Application definition
