@@ -1,2 +1,2 @@
   
-web: gunicorn PersonalWeb.wsgi
+web: gunicorn PersonalWeb2.wsgi
