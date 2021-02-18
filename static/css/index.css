@@ -8,7 +8,7 @@
 }
 .mytext{
     width: 70vw;
-    padding-left: 20px;
+    text-align: center;
 }
 .bg{
     width:70vw;
@@ -38,6 +38,19 @@
     }
 
 }
+
+/* second section css */
+.second-sec{
+    background-color: white;
+}
+
+
+
+
+
+
+
+/* media queries  */
 @media only screen and (max-width: 800px){
     .planet{
         height:300px;
@@ -47,6 +60,6 @@
 @media only screen and (max-width: 530px){
     .planet{
         height:170px;
-        width:170px;
+        width:194px;
     }
 }
