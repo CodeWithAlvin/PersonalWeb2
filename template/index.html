@@ -17,22 +17,22 @@
     <h3 class="f-audio f-small">I am a Programmer</h3>
   </div>
   <div class="bg">
-    <img
-      class="planet"
-      src="/static/image/planet.png"
-      alt="planet"
-    />
+    <img class="planet" src="/static/image/planet.png" alt="planet" />
   </div>
 </section>
 
 <section class="second-sec">
-<div class="skill-h f-big f-audio c1">
-  <h1>My Skills</h1>
-</div>
-<div class="skills">
-  <progress class="progressbar" value = "65" max = "100"/>
-  <progress class="progressbar" value = "65" max = "100"/>
-</div>
+  <div class="skill-h f-big f-audio c1">
+    <h1>My Skills</h1>
+  </div>
+  <div class="skills">
+    {% for skillname,value in skillist.items%}
+    <div class="skill-div">
+      <p class="f-small c2 f-audio skill-name">{{skillname}}</p>
+      <progress class="progressbar" value="{{value}}" max="100" />
+    </div>
+  {% endfor %}
+  </div>
 </section>
 {%endblock body%}
 
