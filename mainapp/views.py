@@ -3,7 +3,7 @@ from mainapp.models import Skill
 
 # Create your views here.
 def index(reuests):
-    skilllist={}
+    skilldic={}
     for i in Skill.objects.values():
-        skilllist['']
-    return render(reuests,"index.html",context={"skillist":skillist})
+        skilldic[i["skill"]]=i["level"]
+    return render(reuests,"index.html",context={"skillist":skilldic})

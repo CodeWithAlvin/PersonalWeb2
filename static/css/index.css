@@ -7,11 +7,15 @@
     align-items: center;
 }
 .mytext{
+    position: absolute;
+    left: 5vw;
+    z-index: 2;
     width: 70vw;
     text-align: center;
 }
 .bg{
-    width:70vw;
+    position:absolute;
+    right:5vw;
 }
 .planet{
     height:430px;
@@ -47,8 +51,8 @@
     align-items: center;
 }
 .skill-name{
-    margin-right: 30px;
-    min-width:60px;
+    margin-right: 27px;
+    min-width:111px;
     text-align: left !important;
 }
 .skills{
