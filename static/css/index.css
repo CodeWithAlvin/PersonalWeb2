@@ -1,3 +1,47 @@
+.nav{
+  display: flex;
+  flex-direction: row-reverse;
+  width:100vw;
+  position: fixed;
+  top: -4px;
+  z-index: 5;
+  padding-right: 20px;
+  background-color: rgba(3, 2, 2, 0.39);
+  backdrop-filter: blur(5px);
+}
+.menu{
+  display:none;
+  z-index: 5;
+}
+.nav a{
+  margin:5px 40px;
+  text-decoration: none;
+  opacity: 0.9;
+}
+.nav a:hover{
+  animation: big 0.3s ease-out forwards;
+  opacity: 1;
+}
+
+.cnct-me{
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(3, 2, 2, 0.39);    
+}
+.cnct-me a{
+  margin: 0px 20px;
+  opacity: 0.7;
+}
+.cnct-me a:hover{
+  opacity: 1;
+  animation: big 0.3s ease-out forwards;
+}
 .first-sec {
   height: 100vh;
   background-image: linear-gradient(
@@ -163,7 +207,71 @@
     height: 300px;
     width: 350px;
   }
-}
+  #navbar{
+    display:none;
+    flex-direction:column-reverse;
+    height:100%;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:5;
+    position: fixed;
+  }
+  #navbar a{
+    margin:20px 0px;
+    font-size: 40px !important;
+  }
+  .menu {
+    background-color:transparent;
+    border:none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    outline:none;
+    align-self:flex-end;
+    position:fixed;
+    top:0px;
+    right:6px;
+    width:60px;
+    height:60px;
+    z-index:5;
+    fill: none;
+    stroke: black;
+    stroke-width:6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  
+  }
+    
 @media only screen and (max-width: 530px) {
   .planet {
     height: 170px;
@@ -172,5 +280,27 @@
   .progressbar {
     height: 30px;
     width: 40vw;
+  }
+  
+}
+
+
+
+/* animations */
+@keyframes comedown{
+  from{
+    top:0;
+  }
+  to{
+    top:inherit;
+  }
+}
+
+@keyframes big{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.5);
   }
 }

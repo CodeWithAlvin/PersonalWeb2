@@ -23,4 +23,4 @@ def submit(request):
         messages.success(request, "Your Request has been submited")
         return redirect(reverse('index'))
     messages.success(request, "An Error Occured Please Try Again")
-    return redirect(reverse('index'))
+    return render(request,'err.html')

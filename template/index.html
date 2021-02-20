@@ -9,14 +9,29 @@
 
 <!--Body of Page-->
 {%block body%}
-{% if messages %}
-	{% for message in messages %}
-	
-	{% endfor %}
-	{% endif %}
+<section class="nav" id="navbar">
+  <a href="#contact" class="f-small f-audio c2">Contact</a>
+  <a href="#about" class="f-small f-audio c2">About</a>
+  <a href="#ido" class="f-small f-audio c2">what I Do</a>
+  <a href="#skills" class="f-small f-audio c2">Skills</a>
+  <a href="#home" class="f-small f-audio c2">Home</a>
+</section>
+
+<!-- Hamburger from https://css-tricks.com/line-animated-hamburger-menu/-->
+<button class="menu" id="menu" onclick="ToggleNav()" aria-label="Main Menu">
+  <svg width="60px" height="60px" viewBox="20 0 90 100">
+    <path class="line line1"
+      d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+    <path class="line line2" d="M 20,50 H 80" />
+    <path class="line line3"
+      d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+  </svg>
+</button>
+
+<!--End of Hamburger from https://css-tricks.com/line-animated-hamburger-menu/-->
 
 
-<section class="first-sec">
+<section id="home" class="first-sec">
   <div class="mytext">
     <h1 class="f-audio f-big">Hey I'm ALVIN SAINI</h1>
     <br />
@@ -27,7 +42,7 @@
   </div>
 </section>
 
-<section class="second-sec">
+<section id="skills" class="second-sec">
   <div class="heading f-big f-audio c1">
     <h1>My Skills</h1>
   </div>
@@ -41,7 +56,7 @@
   </div>
 </section>
 
-<section class="third-sec">
+<section id="ido" class="third-sec">
   <div class="heading f-big f-audio c1">
     <h1>What Can I Do</h1>
   </div>
@@ -54,7 +69,7 @@
   </div>
 </section>
 
-<section class="fourth-sec">
+<section id="about" class="fourth-sec">
   <div class="heading f-big f-audio c1">
     <h1>About Me</h1>
   </div>
@@ -63,7 +78,7 @@
   </div>
 </section>
 
-<section class="fifth-sec">
+<section id="contact" class="fifth-sec">
   <div class="heading f-big f-audio c1">
     <h1>Contact Me</h1>
   </div>
@@ -88,6 +103,16 @@
   </form>
   </div>
 </section>
+
+<section class="cnct-me">
+  <a href="https://GitHub.com/codewithalvin/" ><i title="GITHUB" class="f-big c2 skill-icon fab fa-github-square"></i></a>
+  <a href="https://twitter.com/Imalvinsaini" ><i title="TWITTER" class="f-big c2 skill-icon fab fa-twitter"></i></a>
+  <a href="https://dev.to/codewithalvin" ><i title="DEV" class="f-big c2 skill-icon fab fa-dev"></i></a>
+  <a href="https://alvinsaini.blogspot.com"><i class="f-big c2 fab fa-blogger"></i></a>
+  <a href="https://alvinsaini.herokuapp.com"><i class="f-big c2 fas fa-external-link-alt"></i></a>
+</section>
 {%endblock body%}
 <!-- Script of Page-->
-{%block script%} {%endblock script%}
+{%block script%} 
+<script src="https://kit.fontawesome.com/a4cc34897e.js" crossorigin="anonymous"></script>
+{%endblock script%}
