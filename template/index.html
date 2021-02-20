@@ -22,7 +22,7 @@
 </section>
 
 <section class="second-sec">
-  <div class="skill-h f-big f-audio c1">
+  <div class="heading f-big f-audio c1">
     <h1>My Skills</h1>
   </div>
   <div class="skills">
@@ -31,10 +31,22 @@
       <p class="f-small c2 f-audio skill-name">{{skillname}}</p>
       <progress class="progressbar" value="{{value}}" max="100" />
     </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="third-sec">
+  <div class="heading f-big f-audio c1">
+    <h1>What Can I Do</h1>
+  </div>
+  <div class="dos-div">
+    {% for dos in idos%}
+    <div class="dos-box">
+      <p class="f-small c2 f-audio">{{dos}}</p>
+    </div>
+    {% endfor %}
   </div>
 </section>
 {%endblock body%}
-
 <!-- Script of Page-->
 {%block script%} {%endblock script%}
