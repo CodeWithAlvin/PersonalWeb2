@@ -9,6 +9,12 @@
 
 <!--Body of Page-->
 {%block body%}
+{% if messages %}
+	{% for message in messages %}
+	
+	{% endfor %}
+	{% endif %}
+
 
 <section class="first-sec">
   <div class="mytext">
@@ -45,6 +51,41 @@
       <p class="f-small c2 f-audio">{{dos}}</p>
     </div>
     {% endfor %}
+  </div>
+</section>
+
+<section class="fourth-sec">
+  <div class="heading f-big f-audio c1">
+    <h1>About Me</h1>
+  </div>
+  <div class="shadow-box">
+    <p class="f-small c2 f-audio">{{about}}</p>
+  </div>
+</section>
+
+<section class="fifth-sec">
+  <div class="heading f-big f-audio c1">
+    <h1>Contact Me</h1>
+  </div>
+  <div class="shadow-box">
+   <form action="/submit" method="POST">
+    {%csrf_token%}
+		<div class="form-div">
+			<label class="f-audio f-small c2">Name :</label>
+			<input class="form-elements f-small c2 f-audio" name="name" type="text" placeholder="Enter Your Name" required>
+		</div>
+		<div class="form-div">
+			<label class="f-audio f-small c2">Email :</label>
+			<input class="form-elements f-small c2 f-audio" name="mail" type="email" placeholder="Enter Your Email" required>
+		</div>
+		<div class="form-div">
+			<label class="f-audio f-small c2">Message :</label>
+			<textarea class="form-elements f-small c2 f-audio" name="desc" rows="5" required></textarea>
+		</div>
+    <div class="submit-div">
+      <input class="submit-btn f-small f-audio c2" type="submit" value="submit">
+    </div>
+  </form>
   </div>
 </section>
 {%endblock body%}

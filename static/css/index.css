@@ -91,11 +91,61 @@
     max-width: 250px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
+/* fourth section */
+.fourth-sec{
+  margin-top: 50px;
+  
+}
+.shadow-box{
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 50px 30px;
+  max-width: 70vw;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+/*fifth section  */
+.fifth-sec{
+  padding-bottom: 45px;
+  background: #A770EF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.form-div{
+  display: flex;
+  flex-direction: column;
+}
+.form-elements{
+  margin:20px 4px;
+  text-align: center;
+  border:none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-radius: 9px;
 
+}
+.submit-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-btn{
+  width: 100px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.submit-btn:hover{
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.377), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /* media queries  */
 @media only screen and (max-width: 980px) {
