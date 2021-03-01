@@ -1,6 +1,3 @@
-body{
-  overflow-x:hidden;
-}
 .nav{
   display: flex;
   flex-direction: row-reverse;
@@ -9,7 +6,7 @@ body{
   top: -4px;
   z-index: 5;
   padding-right: 20px;
-  background-color: rgba(3, 2, 2, 0.7);
+  background-color: rgba(3, 2, 2, 0.39);
   backdrop-filter: blur(5px);
 }
 .menu{
@@ -35,7 +32,7 @@ body{
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  background-color: rgba(3, 2, 2, 0.7);    
+  background-color: rgba(3, 2, 2, 0.39);    
 }
 .cnct-me a{
   margin: 0px 20px;
@@ -57,7 +54,7 @@ body{
   flex-direction: row;
   justify-content: center;
   align-items: center;
- }
+}
 .mytext {
   position: absolute;
   left: 5vw;
@@ -87,15 +84,11 @@ body{
 .c2 {
   color: rgb(21, 21, 21) !important;
 }
-c3{
-  color: #fff !important;
-}
 
 /* second section css */
 .second-sec {
   background-color: white;
 }
-
 .heading {
   text-align: center;
   padding-top: 40px;
@@ -199,15 +192,6 @@ c3{
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.377), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.leftIn{
-	animation:leftIn 1s forwards ease-in-out;
-}
-.rightIn{
-	animation:rightIn 1s forwards ease-in-out;
-}
-
-
-
 /* media queries  */
 @media only screen and (max-width: 980px) {
   .f-big {
@@ -304,29 +288,20 @@ c3{
 
 
 /* animations */
+@keyframes comedown{
+  from{
+    top:0;
+  }
+  to{
+    top:inherit;
+  }
+}
+
 @keyframes big{
   from{
     transform: scale(1);
   }
   to{
     transform: scale(1.5);
-  }
-}
-
-@keyframes leftIn{
-  from{
-    transform: translateX(-100vw);
-  }
-  to{
-    transform: translateX(0vw);
-  }
-}
-
-@keyframes rightIn{
-  from{
-    transform: translateX(100vw);
-  }
-  to{
-    transform: translateX(0vw);
   }
 }
