@@ -52,7 +52,7 @@ body{
 }
 .cnct-me a:hover{
   opacity: 1;
-  animation: big 0.3s ease-out forwards;
+  animation: big 0.1s ease-out forwards;
 }
 .first-sec {
   height: 100vh;
@@ -312,7 +312,9 @@ c3{
     height: 30px;
     width: 40vw;
   }
-  
+  .cnct-me a{
+  margin: 0px 10px;
+}
 }
 
 
@@ -323,7 +325,7 @@ c3{
     transform: scale(1);
   }
   to{
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 }
 
