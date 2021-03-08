@@ -1,3 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.f-audio{
+    font-family: 'Audiowide', cursive;
+}
 body{
   overflow-x:hidden;	
 }
@@ -47,6 +56,7 @@ body{
 }
 .first-sec {
   height: 100vh;
+  content-visibility:auto;
   background-image: linear-gradient(
     60deg,
     #020024 0%,
@@ -93,6 +103,7 @@ c3{
 
 /* second section css */
 .second-sec {
+  content-visibility:auto;
   background-color: white;
 }
 
@@ -124,6 +135,7 @@ c3{
 
 /* third sec */
 .third-sec {
+  content-visibility:auto;
   margin-top: 150px;
   background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 }
@@ -147,6 +159,7 @@ c3{
 
 /* fourth section */
 .fourth-sec{
+  content-visibility:auto;
   margin-top: 50px;
   
 }
@@ -162,6 +175,7 @@ c3{
 
 /*fifth section  */
 .fifth-sec{
+  content-visibility:auto;
   padding-bottom: 45px;
   background: #A770EF;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
