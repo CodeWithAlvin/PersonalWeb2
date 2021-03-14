@@ -11,7 +11,7 @@
 body{
   overflow-x:hidden;	
 }
-.nav{
+.nav{ 
   display: flex;
   flex-direction: row-reverse;
   width:100vw;
@@ -65,19 +65,15 @@ body{
     #00d4ff 100%
   );
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
  }
-.mytext {
-  position: absolute;
-  left: 5vw;
-  z-index: 2;
-  width: 50vw;
+.mytext{
+  max-width: 50vw;
+
 }
-.bg {
-  position: absolute;
-  right: 5vw;
+.bg{
+    max-width: 60vw;
 }
 .planet {
   height: 430px;
@@ -315,7 +311,7 @@ c3{
   }
   .cnct-me a{
   margin: 0px 10px;
-}
+  }
 }
 
 
