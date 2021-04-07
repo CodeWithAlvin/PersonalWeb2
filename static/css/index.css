@@ -68,17 +68,26 @@ body{
   justify-content: center;
   align-items: center;
  }
-.mytext{
-  max-width: 50vw;
-  margin-left: 15px;
+.first-sec::before{
+  content: '';
+  width: 100vw;
+  height: 60vh;
+  position: absolute;
+  top: 6vh;
+  left: 0vw;
+  background-image: url("/static/image/programmer.png");
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-size: 65vh;
+  background-position: center;
 
 }
-.bg{
-    max-width: 60vw;
-}
-.programmer {
-  height: 430px;
-  width: 500px;
+
+.mytext{
+  max-width: 90vw;
+  position: absolute;
+  top: 65vh;
+
 }
 .f-big {
   font-size: 50px;
@@ -232,10 +241,10 @@ c3{
 }
 
 @media only screen and (max-width: 800px) {
-  .planet {
-    height: 300px;
-    width: 350px;
+  .first-sec::before{
+    background-size: 50vh;
   }
+
   #navbar{
     display:none;
     flex-direction:column-reverse;
@@ -302,10 +311,6 @@ c3{
   }
     
 @media only screen and (max-width: 530px) {
-  .planet {
-    height: 170px;
-    width: 194px;
-  }
   .progressbar {
     height: 30px;
     width: 40vw;
@@ -314,7 +319,11 @@ c3{
   margin: 0px 10px;
   }
 }
-
+@media only screen and (max-width: 386px){
+  .first-sec::before{
+    background-size: 40vh;
+  }
+}
 
 
 /* animations */
