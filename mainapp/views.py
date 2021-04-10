@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,reverse
 from mainapp.models import Skill, idos, About, Contact
 from django.contrib import messages
 from datetime import datetime
+import smtplib,os
 # Create your views here.
 
 def index(reuests):
@@ -19,8 +20,26 @@ def submit(request):
         mail = request.POST.get("mail")
         desc = request.POST.get("desc")
         data = Contact(name=name, email=mail, desc=desc, date=datetime.now())
-        data.save()
-        messages.success(request, "Your Request has been submited")
+        data.save() 
+        try:
+            send_mail(name,mail,desc)
+        except:
+            return render(request,'err.html')
         return redirect(reverse('index'))
-    messages.success(request, "An Error Occured Please Try Again")
     return render(request,'err.html')
+
+def send_mail(name,email,desc):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    s.login(os.environ.get("mail"), os.environ.get("passkey"))
+    message=f"""
+    <h1>Contact Request from {name}</h1>
+    <br>
+    <h3>Email : {email}</h3>
+    <br>
+    <h2> {name} said </h2>
+    <br>
+    <p>{desc}</p>
+    """
+    server.sendmail(os.environ.get("mail"), "sainialvin@gmail.com" , message)
+    server.quit()
