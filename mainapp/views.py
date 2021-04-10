@@ -23,7 +23,10 @@ def submit(request):
         desc = request.POST.get("desc")
         data = Contact(name=name, email=mail, desc=desc, date=datetime.now())
         data.save() 
-        sendContact(name,mail,desc)
+        try:
+            sendContact(name,mail,desc)
+        except:
+            return render(request,'err.html')
         return redirect(reverse('index'))
     return render(request,'err.html')
 
