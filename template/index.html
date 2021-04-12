@@ -1,120 +1,175 @@
 {%extends 'base.html'%}
 <!-- Title of Page-->
-{%block title%}Alvin Saini{%endblock title%}
+{%block title%}Portfolio | Alvin Saini{%endblock title%}
 
 <!-- Css of Page-->
 {%block links%}
-<link rel="stylesheet" href="/static/css/index.css" />
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css" />
 {%endblock links%}
 
 <!--Body of Page-->
 {%block body%}
-
-<section class="nav rightIn" id="navbar">
-  <a href="#contact" class="f-small f-audio c3">Contact</a>
-  <a href="#about" class="f-small f-audio c3">About</a>
-  <a href="#ido" class="f-small f-audio c3">what I Do</a>
-  <a href="#skills" class="f-small f-audio c3">Skills</a>
-  <a href="#home" class="f-small f-audio c3">Home</a>
-</section>
-
-<button class="menu rightIn" id="menu" onclick="ToggleNav()" aria-label="Main Menu">
-  <svg width="60px" height="60px" viewBox="20 0 90 100">
-    <path class="line line1"
-      d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-    <path class="line line2" d="M 20,50 H 80" />
-    <path class="line line3"
-      d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-  </svg>
-</button>
-
-
-
-
-<section id="home" class="first-sec leftIn">
-  <div class="mytext">
-    <h1 class="f-audio f-big">Hey I'm ALVIN SAINI</h1>
-    <br />
-    <h3 class="f-audio f-small">I am a Programmer</h3>
-  </div>
-  {% comment %} <div class="bg">
-    <img class="programmer" src="/static/image/programmer.png" alt="planet" />
-  </div> {% endcomment %}
-</section>
-
-<section id="skills" class="second-sec rightIn">
-  <div class="heading f-big f-audio c1">
-    <h1>My Skills</h1>
-  </div>
-  <div class="skills">
-    {% for skillname,value in skillist.items%}
-    <div class="skill-div">
-      <p class="f-small c2 f-audio skill-name">{{skillname}}</p>
-      <progress class="progressbar" value="{{value}}" max="100" />
+<nav>
+  <div class="leftnav">
+    <div>
+      <a href="/simple"><h2>Alvin</h2></a>
+      <a href="/simple"><h2>Saini</h2></a>
     </div>
-    {% endfor %}
-  </div>
-</section>
 
-<section id="ido" class="third-sec leftIn">
-  <div class="heading f-big f-audio c1">
-    <h1>What Can I Do</h1>
   </div>
-  <div class="dos-div">
-    {% for dos in idos%}
-    <div class="dos-box">
-      <p class="f-small c2 f-audio">{{dos}}</p>
+  <div class="rightnav">
+    <a href="#contact" >Contact</a>
+    <a href="#about" >About</a>
+    <a href="#ido">What I Do</a>
+    <a href="#skills" >Skills</a>
+    <a href="#home" >Home</a>
+  </div>
+  <div class="burger">
+    <svg
+      height="32px"
+      id="Layer_1"
+      style="enable-background: new 0 0 32 32"
+      version="1.1"
+      viewBox="0 0 32 32"
+      width="32px"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <path
+        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+      />
+    </svg>
+  </div>
+</nav>
+
+<main>
+  <section id="home" class="first-sec ">
+    <div class="mytext">
+      <h1 >Hey I'm ALVIN SAINI</h1>
+      <br />
+      <h3 >I am a Programmer</h3>
     </div>
-    {% endfor %}
-  </div>
-</section>
+  </section>
 
-<section id="about" class="fourth-sec rightIn">
-  <div class="heading f-big f-audio c1">
-    <h1>About Me</h1>
-  </div>
-  <div class="shadow-box">
-    <p class="f-small c2 f-audio">{{about}}</p>
-  </div>
-</section>
-
-<section id="contact" class="fifth-sec leftIn">
-  <div class="heading f-big f-audio c1">
-    <h1>Contact Me</h1>
-  </div>
-  <div class="shadow-box">
-   <form action="/submit" method="POST">
-    {%csrf_token%}
-		<div class="form-div">
-			<label class="f-audio f-small c2">Name :</label>
-			<input class="form-elements f-small c2 f-audio" name="name" type="text" placeholder="Enter Your Name" required>
-		</div>
-		<div class="form-div">
-			<label class="f-audio f-small c2">Email :</label>
-			<input class="form-elements f-small c2 f-audio" name="mail" type="email" placeholder="Enter Your Email" required>
-		</div>
-		<div class="form-div">
-			<label class="f-audio f-small c2">Message :</label>
-			<textarea class="form-elements f-small c2 f-audio" name="desc" rows="5" required></textarea>
-		</div>
-    <div class="submit-div">
-      <input class="submit-btn f-small f-audio c2" type="submit" value="submit">
+  <section id="skills" class="second-sec ">
+    <div class="heading">
+      <h1>My Skills</h1>
     </div>
-  </form>
-  </div>
-</section>
+    <div class="skills">
+      {% for skillname,value in skillist.items%}
+      <div class="skill-div">
+        <p class="  skill-name">{{skillname}}</p>
+        <progress class="progressbar" value="{{value}}" max="100" />
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <hr>
+  <hr>
+  <section id="ido" class="third-sec ">
+    <div class="heading   ">
+      <h1>What Can I Do</h1>
+    </div>
+    <div class="dos-div">
+      {% for dos in idos%}
+      <div class="dos-box">
+        <p class=" ">{{dos}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+  <section id="about" class="fourth-sec ">
+    <hr>
+  <hr>
+    <div class="heading   ">
+      <h1>About Me</h1>
+    </div>
+    <div class="shadow-box">
+      <p class=" ">{{about}}</p>
+    </div>
+    <hr>
+    <hr>
+  </section>
 
-<section class="cnct-me rightIn">
-  <a href="https://GitHub.com/codewithalvin/" ><i title="GITHUB" class="f-big c3 fab fa-github-square"></i></a>
-  <a href="https://twitter.com/Imalvinsaini" ><i title="TWITTER" class="f-big c3 fab fa-twitter"></i></a>
-  <a href="https://dev.to/codewithalvin" ><i title="DEV" class="f-big c3 fab fa-dev"></i></a>
-  <a href="https://www.linkedin.com/in/alvin-saini-96a193200/" ><i title="linkedin" class="f-big c3 fab fa-linkedin"></i></a>
-  <a href="https://alvinsaini.blogspot.com"><i class="f-big c3 fab fa-blogger"></i></a>
-  <a href="mailto:codewithalvin@gmail.com"><i title="Mail" class="f-big c3 fas fa-envelope"></i></a>
-</section>
+  <section id="contact" class="fifth-sec ">
+    <div class="heading ">
+      <h1>Contact Me</h1>
+    </div>
+    <div class="shadow-box">
+      <form action="/submit" method="POST">
+        {%csrf_token%}
+        <div class="form-div">
+          <label  >Name :</label>
+          <input
+            class="form-elements "
+            name="name"
+            type="text"
+            placeholder="Enter Your Name"
+            required
+          />
+        </div>
+        <div class="form-div">
+          <label >Email :</label>
+          <input
+            class="form-elements  "
+            name="mail"
+            type="email"
+            placeholder="Enter Your Email"
+            required
+          />
+        </div>
+        <div class="form-div">
+          <label  >Message :</label>
+          <textarea
+            class="form-elements  "
+            name="desc"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <div class="submit-div">
+          <input
+            class="submit-btn"
+            type="submit"
+            value="submit"
+          />
+        </div>
+      </form>
+    </div>
+  </section>
+<hr><hr>
+  <section class="sixth-sec">
+  <div class="heading">
+      <h1>Connect Me On</h1>
+  </div>
+  <div class="cnct-me">
+    <a href="https://GitHub.com/codewithalvin/"
+      ><i title="GITHUB" class="fab fa-github-square"></i
+    ></a>
+    <a href="https://twitter.com/Imalvinsaini"
+      ><i title="TWITTER" class="fab fa-twitter"></i
+    ></a>
+    <a href="https://dev.to/codewithalvin"
+      ><i title="DEV" class="fab fa-dev"></i
+    ></a>
+    <a href="https://www.linkedin.com/in/alvin-saini-96a193200/"
+      ><i title="linkedin" class="fab fa-linkedin"></i
+    ></a>
+    <a href="https://alvinsaini.blogspot.com"
+      ><i class="fab fa-blogger"></i
+    ></a>
+    <a href="mailto:codewithalvin@gmail.com"
+      ><i title="Mail" class="fas fa-envelope"></i
+    ></a>
+  </div>
+  </section>
+</main>
 
 {%endblock body%}
 <!-- Script of Page-->
-{%block script%} 
-<script src="https://kit.fontawesome.com/a4cc34897e.js" crossorigin="anonymous"></script>
+{%block script%}
+<script src="/static/js/script.js"></script>
 {%endblock script%}

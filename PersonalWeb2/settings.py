@@ -26,12 +26,13 @@ SECRET_KEY = '*(s=jtc@ay$&_-ve&^wu-xvba*@4a3vx$gvqhj)lyak4^e115+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
 # DEBUG =True
-ALLOWED_HOSTS = ["127.0.0.1","alvinsaini.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1","alvinsaini.herokuapp.com","192.168.29.192"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'fontawesome-free',
     'mainapp.apps.MainappConfig',
     'django.contrib.admin',
     'django.contrib.auth',

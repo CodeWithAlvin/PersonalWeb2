@@ -6,17 +6,19 @@ import os
 from django.core.mail import send_mail 
 
 # Create your views here.
-
-def index(reuests):
+def genrateData():
     skilldic = {}
     for i in Skill.objects.values():
         skilldic[i["skill"]] = i["level"]
     context = {"skillist": skilldic, "idos": idos.objects.all(
     ), "about": About.objects.values()[0].get("about")}
-    return render(reuests, "index.html", context=context)
+    return context
 
+def Index(request):
+    context=genrateData()
+    return render(request, "index.html", context=context)
 
-def submit(request):
+def contactCreate(request):
     if(request.method == "POST"):
         name = request.POST.get("name")
         mail = request.POST.get("mail")
@@ -24,12 +26,18 @@ def submit(request):
         data = Contact(name=name, email=mail, desc=desc, date=datetime.now())
         data.save() 
         try:
-            sendContact(name,mail,desc)
+            # TODO mail
+            # sendContact(name,mail,desc)
+            return True
         except:
-            return render(request,'err.html')
-        return redirect(reverse('index'))
-    return render(request,'err.html')
+            return False
 
+def Submit(request):
+    response=contactCreate(request)
+    if response==True:
+        return redirect(reverse('simple'))
+    return render(request,'err.html')
+    
 def sendContact(name,email,desc):
     mail_subject=f"Contact Request from {name}"
     message=f"""

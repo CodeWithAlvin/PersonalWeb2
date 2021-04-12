@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static%}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +10,9 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="kwz2aSkFEAzlWuMWq_TAOMvvg68VCQRhjlPSic8aMzI" />
+    
 <!-- fonts links -->
+<link rel="icon" href="/static/image/icon.png" type="image/png" sizes="16x16">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
@@ -18,14 +21,16 @@
     <!--Title here-->
     <title>{%block title%} {%endblock title%}</title>
     <!--links here -->
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     {%block links%} {%endblock links%}
     </head>
   <body>
     <!--Body comes here -->
     {%block body%}{%endblock body%}
-
+    
+  </body>
     <!--New JavaScript here-->
-    <script src="/static/js/base.js"></script>
+     <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
      {%block script%}{%endblock script%}
   </body>
 </html>
