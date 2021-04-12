@@ -311,8 +311,3 @@ nav {
   }
   
 }
-@media only screen and (max-width: 386px) {
-  .first-sec::before {
-    background-size: 40vh;
-  }
-}
