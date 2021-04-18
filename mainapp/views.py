@@ -11,7 +11,7 @@ def genrateData():
     for i in Skill.objects.values():
         skilldic[i["skill"]] = i["level"]
     context = {"skillist": skilldic, "idos": idos.objects.all(
-    ), "about": About.objects.values()[0].get("about")}
+    ), "about": About.objects.values()}
     return context
 
 def Index(request):
@@ -26,16 +26,16 @@ def contactCreate(request):
         data = Contact(name=name, email=mail, desc=desc, date=datetime.now())
         data.save() 
         try:
+            return True
             # TODO mail
             # sendContact(name,mail,desc)
-            return True
         except:
             return False
 
 def Submit(request):
     response=contactCreate(request)
     if response==True:
-        return redirect(reverse('simple'))
+        return redirect(reverse('index'))
     return render(request,'err.html')
     
 def sendContact(name,email,desc):

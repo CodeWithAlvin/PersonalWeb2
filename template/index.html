@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{% load custom_tags %}
 <!-- Title of Page-->
 {%block title%}Portfolio | Alvin Saini{%endblock title%}
 
@@ -8,7 +9,7 @@
 <link rel="stylesheet" href="/static/css/style.css" />
 {%endblock links%}
 
-<!--Body of Page-->
+<!--Body of Page--> 
 {%block body%}
 <nav>
   <div class="leftnav">
@@ -60,8 +61,10 @@
     <div class="skills">
       {% for skillname,value in skillist.items%}
       <div class="skill-div">
-        <p class="  skill-name">{{skillname}}</p>
-        <progress class="progressbar" value="{{value}}" max="100" />
+        <label for ={{skillname}} class="skill-name">{{skillname}}</label>
+        <div class="bar">
+          <div id={{skillname}} class="filled" style="width: {{value}}%"><p>{{value}}%</p></div>
+        </div>
       </div>
       {% endfor %}
     </div>
@@ -75,7 +78,7 @@
     <div class="dos-div">
       {% for dos in idos%}
       <div class="dos-box">
-        <p class=" ">{{dos}}</p>
+        <p >{{dos}}</p>
       </div>
       {% endfor %}
     </div>
@@ -84,11 +87,16 @@
   <section id="about" class="fourth-sec ">
     <hr>
   <hr>
-    <div class="heading   ">
+    <div class="heading">
       <h1>About Me</h1>
     </div>
     <div class="shadow-box">
-      <p class=" ">{{about}}</p>
+      {% for dict in about%}
+      <div class="pair">
+        <span >{{dict.values|indexVal:0}} :</span>
+        <span > {{dict.value}}</span>
+      </div>
+      {% endfor %}
     </div>
     <hr>
     <hr>

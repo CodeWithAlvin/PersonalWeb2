@@ -15,10 +15,12 @@ class idos(models.Model):
 	    	return(self.what_you_do)
     
 class About(models.Model):
-    about=models.TextField()
-
-    def __str__(self):
-	    	return(self.about[:30])
+	key=models.CharField(max_length=50)
+	value=models.TextField()
+	id=models.IntegerField(primary_key=True)
+	
+	def __str__(self):
+	    return(self.key[:30])
 
 class Contact(models.Model):
 	name=models.CharField(max_length=50)

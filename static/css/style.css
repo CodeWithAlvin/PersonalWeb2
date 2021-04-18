@@ -8,7 +8,7 @@
   --background:rgba(0, 0, 0, 0.19);
   --fbig:35px;
   --fsmall:25px;
-}
+} 
 
 * {
   margin: 0;
@@ -62,6 +62,7 @@ nav {
   padding-left: 20px;
   padding-top: 5px;
   height: 50px;
+  transition: var(--transition);
 }
 .leftnav a{
   font-family: var(--baumans);
@@ -76,20 +77,10 @@ nav {
 .leftnav a:nth-child(2n) {
   color: var(--primary-color) !important;
 }
+.leftnav div:hover{
+  transform: scale(0.90);
+}
 
-/* swich management */
-.pipeline{
-  position: absolute;
-  right: 90px;
-  top:12px;
-}
-.pipeline p{
-  font-size: var(--fsmall);
-  padding:0px 10px;
-}
-.pipeline p:nth-child(2n-1){
-  color:var(--primary-color);
-}
 /* right nav management */
 .rightnav {
   display: flex;
@@ -97,6 +88,7 @@ nav {
   width: 60vw;
   padding-top: 20px;
   width: 100vw;
+  overflow:visible;
 }
 .rightnav a {
   width: 100vw;
@@ -110,7 +102,7 @@ nav {
   transition: var(--transition);
 }
 .rightnav a:hover {
-  background-color: rgba(191, 213, 226, 0.63);
+  background-color: rgba(153, 215, 250, 0.774);
   color: var(--primary-color) !important;
   padding-left: 2.3rem;
 }
@@ -152,7 +144,7 @@ nav {
 
 .mytext {
   max-width: 100vw;
-  height: 60vh;
+  height: 62vh;
   display: flex;
   flex-direction: column;
   justify-content:flex-end;
@@ -175,7 +167,7 @@ nav {
   font-family: var(--audio);
   padding-top: 40px;
 }
-.skill-div {
+.skill-div{
   display: flex;
   align-items: center;
 }
@@ -192,10 +184,29 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.progressbar {
-  height: 70px;
-  width: 40vw;
-  margin-top: 10px;
+.bar{
+  background-color: rgb(233, 233, 231);
+  width:18rem ;
+  height: 35px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 13px;
+  margin:15px 0px;
+}
+.filled{
+  font-family:var(--baumans);
+  color: white;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  background-color: var(--primary-color);
+  height: inherit;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.filled p{
+  padding: 0px 6px;
 }
 
 /* third sec */
@@ -219,6 +230,7 @@ nav {
   padding: 20px 20px;
   max-width: 250px;
   border-radius: 10px;
+  color: var(--primary-color);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .dos-box p{
@@ -239,7 +251,20 @@ nav {
   max-width: 70vw;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: grid;
+  grid-template-columns: 1fr;
 }
+.pair{
+  margin:10px 0px;
+}
+.pair span{
+  font-size: var(--fsmall);
+}
+
+.pair span:nth-child(2n){
+  color:var(--primary-color);
+}
+
 .shadow-box p{
     font-size: var(--fsmall);
 }
@@ -263,8 +288,12 @@ nav {
   border: none;
   background: none;
   outline: none;
+  color: var(--primary-color);
   border-bottom: 2px solid rgb(0, 0, 0);
   border-radius: 9px;
+}
+.form-elements::placeholder{
+  color: rgb(144, 214, 255);
 }
 .submit-div {
   display: flex;
@@ -279,9 +308,11 @@ nav {
   border-radius: 9px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .submit-btn:hover {
+  transform: scale(0.90);
   box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.377),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -299,15 +330,41 @@ nav {
 .cnct-me a{
   color: var(--primary-color);
   font-size: 60px;
+  margin-left:20px ;
+  transition: var(--transition);
 }
 
-
-@media only screen and (max-width: 972px) {
+.cnct-me a:hover{
+  transform: scale(0.90);
 }
-@media only screen and (max-width: 530px) {
-  .progressbar {
+@media only screen and (max-width: 548px) {
+  .bar {
     height: 30px;
-    width: 40vw;
+    width: 10rem;
+  }
+  .filled{
+    font-size: small;
+  }
+  .dos-div{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  :root{
+    --fsmall:20px;
+  }
+  .bar {
+    height: 20px;
+    width: 7rem;
+  }
+  .filled{
+    font-size: small;
+  }
+  .skill-name{
+    margin-right:10px ;
+    min-width: 4em;
+    /* font-size: 20px; */
   }
   
 }
