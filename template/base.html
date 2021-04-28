@@ -20,8 +20,6 @@
     />
     <!--Title here-->
     <title>{%block title%} {%endblock title%}</title>
-    <!--links here -->
-    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     {%block links%} {%endblock links%}
     </head>
   <body>
@@ -31,6 +29,6 @@
   </body>
     <!--New JavaScript here-->
        {%block script%}{%endblock script%}
-     <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+		<script src="https://kit.fontawesome.com/a4cc34897e.js" crossorigin="anonymous"></script>
   </body>
 </html>

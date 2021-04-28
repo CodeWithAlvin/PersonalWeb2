@@ -44,7 +44,14 @@
     </svg>
   </div>
 </nav>
-
+{% if messages %}
+<ul id="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="li {{ message.tags }}"{% endif %}>{{ message }}</li>
+    <button id="close">Close</button>
+    {% endfor %}
+</ul>
+{% endif %}
 <main>
   <section id="home" class="first-sec ">
     <div class="mytext">

@@ -26,17 +26,19 @@ def contactCreate(request):
         data = Contact(name=name, email=mail, desc=desc, date=datetime.now())
         data.save() 
         try:
+            sendContact(name,mail,desc)
             return True
-            # TODO mail
-            # sendContact(name,mail,desc)
-        except:
+        except Exception as e:
+            print(e)
             return False
 
 def Submit(request):
     response=contactCreate(request)
     if response==True:
-        return redirect(reverse('index'))
-    return render(request,'err.html')
+        messages.success(request,"Contact Request Sended")
+    elif response==False:
+        messages.error(request,"An error occured. Please Try again")
+    return redirect(reverse('index'))
     
 def sendContact(name,email,desc):
     mail_subject=f"Contact Request from {name}"
@@ -45,5 +47,4 @@ def sendContact(name,email,desc):
     {name} said\n
     {desc}
     """
-    send_mail(mail_subject, message, os.environ.get('mail'), ["codewithalvin@gmail.com"], 
-              fail_silently=False)
+    send_mail(mail_subject, message, os.environ.get('mail'), ["codewithalvin@gmail.com"],fail_silently=False)
