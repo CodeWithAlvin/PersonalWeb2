@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
 import os
 
@@ -24,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*(s=jtc@ay$&_-ve&^wu-xvba*@4a3vx$gvqhj)lyak4^e115+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
-#DEBUG =True
+DEBUG =True
+
 ALLOWED_HOSTS = ["127.0.0.1","alvinsaini.herokuapp.com","192.168.29.192"]
 
 
@@ -49,8 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
+   ]
 
 ROOT_URLCONF = 'PersonalWeb2.urls'
 
@@ -130,8 +128,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS=[
 		os.path.join(BASE_DIR,"static/"),
 			]
+
+if os.environ.get("PRODUCTION")=="TRUE":
+	STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+	MIDDLEWARE.append( 'whitenoise.middleware.WhiteNoiseMiddleware')
+	DEBUG=False

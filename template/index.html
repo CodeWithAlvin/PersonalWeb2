@@ -99,9 +99,15 @@
     </div>
     <div class="shadow-box">
       {% for dict in about%}
-      <div class="pair">
-        <span >{{dict.values|indexVal:0}} :</span>
-        <span > {{dict.value}}</span>
+      <div id="{{dict.id}}" class="pair">
+      <span class="keys">{{dict.key}} : </span>
+      {% if dict.value|split:","|length == 1 %}
+      <span class="values">{{dict.value}}</span>
+      {% else %}
+      {% for val in dict.value|split:"," %}
+      <li class="values margin-top">{{val}} </li>	
+      {% endfor %}
+      {% endif %}
       </div>
       {% endfor %}
     </div>
